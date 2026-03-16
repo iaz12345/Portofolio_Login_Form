@@ -1,0 +1,192 @@
+/* bagian ini meriset semua dasar */
+* {
+  /*menghapus jarak bawaan browser*/
+  margin: 0;
+  /*biar perhitungan width dan height g aneh*/
+  box-sizing: border-box;
+  /*menghapus padding bawaan*/
+  padding: 0;
+}
+
+.main {
+  /*flex 1 ini berfungsi agar sintaks main itu menganbil sisa ruang dati semua elemen selain dirinya. jadi kaya awalnya 100%, terus dikurang navbar 10%, dikurang lagi sama footer 5%. jadinya main akan ngambuk sisa persentasr layar gitu*/
+  flex: 1;
+  /*display flex bikin elemen yang dipasangin dia jadi berjajar bershaf gitu (horizontal)*/
+  /*display flex ini juga dia mengaktifkan flexbox, jadi justify-content dan align-items bisa dipake. kalo g ada display flex g guna 2 fitur itu*/
+  /* display:flex mengaktifkan sistem flexbox.
+     Secara default elemen akan tersusun horizontal (flex-direction: row).
+     Jika kita ubah menjadi flex-direction: column maka elemen akan tersusun vertikal. */
+  display: flex;
+  /*justify content ini dia mengatur koordinat letak elemen secara horizontal jadi kalau bisa dibilang dia tuh mengatur sumbu x nya yang di mana kalau secara koordinat dia itu adalah 0, y*/
+  justify-content: center;
+  /*kalau align items dia itu mengatur koordinat elemen secara vertikal sehingga secara matematis koordinat dia tuh adalah x,0*/
+  align-items: center;
+}
+
+label {
+  color: black;
+  font-size: clamp(15px, 4vw, 25px);
+}
+
+input::placeholder{
+  font-size: clamp(13px, 4vw, 20px);
+}
+
+body {
+  display: flex;
+  /*menunjukan bahwa tinggi elemen 100% layar, 1vh = 1% layar */
+  height: 100vh;
+   /*flex-direction column bikin elemen yang dipasangin dia jadi berurut kebawah gitu (vertikal)*/
+  flex-direction: column;
+  /* min-height:100vh → tinggi minimal elemen adalah setinggi layar, tapi bisa bertambah jika konten lebih banyak */
+  min-height: 100vh;
+  background-color: #AACDDC;
+  font-family: Times New Roman ;
+}
+
+.navbar {
+  display: flex;
+  /* justify-content: space-between → menaruh elemen pertama di kiri, elemen terakhir di kanan, dan membagi sisa ruang di antaranya */
+  justify-content: space-between;
+  align-items: center;
+  /* paddinh tuh kan setnya (atas, kanan, bawah, kiri). jadi padding:15px 40px → atas bawah 15px, kiri kanan 40px */
+  padding: 15px 3%;
+  background-color: #81A6C6;
+}
+
+.Logo {
+  color: rgba(0, 0, 0, 0.4);
+  font-size: clamp(20px, 1.5vw, 70px);
+  font-weight: bold;
+  font-family: Times New Roman;
+}
+
+.nav-links {
+  display: flex;
+  list-style: none;
+  gap: 20px;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: black;
+  font-weight: 500;
+  transition: 0.3s;
+  font-size: clamp(15px, 1.5vw, 50px);
+}
+
+.nav-links a:hover{
+  color: #2F5D9F;
+}
+
+h1 {
+text-align: center;
+color: black;
+font-size: clamp(30px, 4vw, 40px);
+}
+
+.container {
+  /*rgba wajib pake 4 unsur (red, green, blue, alpha. bagian alpha yang ngatur tipis tebelnya warna*/
+  background-color: rgba(255,255,255,0.4);
+  /*jarak elemen ke sisi kotak*/
+  padding: clamp(20px, 4vw, 35px);
+  width: 90%;
+  /*panjang kotak sejajar sumbu x*/
+  max-width: 520px;
+  /*sudut lengkung*/
+  border-radius: 12px;
+  /*bayangan biar keren */
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+}
+/* kotak pembungkus input password dan ikon mata */
+.pass-box{
+  /* membuat kotak ini menjadi patokan posisi
+     untuk elemen yang memakai position:absolute */
+  position: relative;
+}
+
+
+/* input password */
+.pass-box input{
+  /* lebar input mengikuti lebar parent (pass-box) */
+  width: 100%;
+
+  /* jarak isi teks ke tepi input */
+  padding: clamp(10px, 2vw, 16px);
+
+  /* memberi ruang di kanan supaya teks tidak menabrak ikon mata */
+  padding-right: 40px;
+}
+
+
+/* tombol ikon mata */
+.eye{
+
+  /* absolute membuat posisi ikon bebas dari layout normal */
+  /* dia akan diposisikan relatif terhadap .pass-box */
+  position: absolute;
+
+  /* jarak ikon dari sisi kanan kotak password */
+  right: 10px;
+
+  /* menaruh ikon di 50% tinggi kotak */
+  top: 50%;
+
+  /* menggeser ikon setengah tinggi dirinya ke atas
+     supaya benar-benar berada di tengah vertikal */
+  transform: translateY(-50%);
+
+  /* menghilangkan tampilan tombol default */
+  border: none;
+  background: transparent;
+
+  /* membuat cursor berubah menjadi tangan saat diarahkan */
+  cursor: pointer;
+  font-size: clamp(25px, 2vw, 500px);
+}
+
+input {
+  /*lebar input = 100% dari lebar parent (container). lebar input = 100% dari lebar parent (container)*/
+  width: 100%;
+/*margin adalah jarak di luar elemen, yaitu jarak antara elemen itu dengan elemen lain di sekitarnya.*/
+  margin-top: 5px;
+  margin-bottom: 5px;
+  padding: clamp(10px, 2vw, 16px);
+  border-radius: 12px;
+  box-shadow: none;
+  outline: none;
+}
+
+.btn-login {
+  display: block;       /* biar margin auto bisa bekerja */
+  margin: 0 auto;       /* horizontal center */
+  margin-left: auto;
+  margin-right: auto ;
+  width: clamp(90px, 8vw, 1500px);           /* lebar button */
+  padding: 5px;
+  border-radius: 30px;  
+  cursor: pointer;
+  font-size: clamp(15px, 1.5vw, 30px);
+}
+
+p {
+  font-size: clamp(15px, 2vw, 25px);
+  font-family: Times New Roman;
+  text-align: center;
+  padding-top: 12px;
+  /*padding: clamp(10px, 2vw, 50px);*/
+}
+
+.message{
+  padding: 10px;
+}
+a {
+  font-family: Times New Roman;
+  text-decoration: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-top: 4px ;
+  color: black;
+  font-size: clamp(15px, 2vw, 25px);
+}

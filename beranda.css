@@ -1,0 +1,100 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* ======================
+   BODY
+   ====================== */
+
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  height: 100vh;
+  font-family: Times New Roman;
+  background: linear-gradient(135deg, #AACDDC, #D6E6F2);
+}
+
+/* ======================
+   NAVBAR
+   ====================== */
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  padding: 15px 3%;
+  background-color: #81A6C6;
+}
+
+.Logo {
+  color: rgba(0, 0, 0, 0.4);
+  font-weight: bold;
+  font-size: clamp(20px, 1.5vw, 70px);
+}
+
+.nav-links {
+  display: flex;
+  gap: 20px;
+  list-style: none;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: black;
+  transition: 0.3s;
+  font-size: clamp(15px, 1.5vw, 50px);
+}
+
+
+.nav-links a:hover {
+  color: #2F5D9F;
+}
+
+/* ======================
+   MAIN
+   ====================== */
+
+main {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+/* ======================
+   CONTAINER
+   ====================== */
+
+.container {
+  background-color: rgba(255, 255, 255, 0.4);
+
+  /* sama seperti signup */
+  padding: clamp(20px, 4vw, 35px);
+
+  width: 90%;
+  max-width: 520px;
+
+  border-radius: 12px;
+
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+
+  margin: 20px;
+}
+
+/* ======================
+   TEXT
+   ====================== */
+
+h4{
+  margin-top: 10px;
+  font-size: clamp(20px, 2vw, 30px);
+}
+
+p{
+  font-size: clamp(15px, 2vw, 25px);
+}

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>My Portofolio</title>
+<!--biar html mendeteksi si file css-->
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <nav class="navbar">
+    <div class="Logo">My portofolio</div>
+    <ul class="nav-links">
+      <li><a href="signup.html">Sign-up</a></li>
+    </ul>
+  </nav>
+<main class="main">
+  <!--fungsi div tuh biar kita bisa ngebungkus dia dalam sebauh nama, jadi class tuh fungsinya biar kita bisa kasih nama biar gampang di edit di css -->
+  <div class="container"> 
+    <h1>Login</h1>
+    <!--wadah buat input-->
+    <form id="login-form">
+    <div>
+      <!--memberi nama pada input-->
+      <!--kita pake for biar dia konek sama si input-->
+      <label for="username">Username</label>
+      <!--input adalah tempat kita masukij data-->
+      <!--type kita pake text biar dia mendeteksi text biasa dan karakter disembunyikan.
+        id itu untuk menghubunkan input
+        ke label, js, dan css
+        name berfungsi untuk ke server
+        placeholder ngasih tulisan tipis di
+        text box wajib diisi 
+        name itu opsional karena hanya dipakai di backend kaya php, node, dll. kalo id itu dia membaca js
+-->
+      <input type="text" id="username" name="username" placeholder="masukan username">
+    </div>
+  <div>
+    <label for="password">Password</label>
+    <div class="pass-box">
+      <input type="password" id="password" name="password" placeholder="masukan password">
+      <button class="eye" type="button" id="togglePassword">🙈</button>  
+    </div>
+    <p class="message" id="message"></p>
+  </div>
+    <!--button bikin tombol untuk subkit input dll, typenya submit biar pas klik form terkirim 
+        -->
+    <button class="btn-login" type="submit">Login</button>
+    <!--<a> ini berfungsi buat link, href itu tujuan link nya -->
+    <p>belum punya akun?</p>
+    <a href="signup.html">👉🏼Sign-up👈🏼</a>
+    </form>
+  </div>
+</main>
+  <script src="script.js"></script>
+</body>
+</html>
